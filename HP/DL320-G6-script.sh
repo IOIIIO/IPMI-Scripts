@@ -9,7 +9,7 @@ IPMIOUT="/tmp/ipmi-logger/ipmiout-dl320-g6"
 GRAPHITE_HOST="<GRAPHITE-HOST-IP>"
 
 # Pull the data we want from the HP machine, Via IPMITOOL
-/usr/bin/ipmitool -I lanplus -H <TARGET-IP> -U <TARGET_IPMI_USERNAME> -P <TARGET_IPMI_PASSWORD> sensor > ${IPMIOUT}
+/usr/bin/ipmitool -I lanplus -H <TARGET-IP> -U <TARGET_IPMI_USERNAME> -P <TARGET_IPMI_PASSWORD> sdr elist full > ${IPMIOUT}
 
 # Select what we are sending to Graphite
 FAN_1="$(grep "Fan 1" ${IPMIOUT} | awk ' {print $4} ')"

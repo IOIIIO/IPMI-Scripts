@@ -10,9 +10,12 @@ if [ ! -d "/tmp/ipmi-logger/" ]; then
 fi
 
 #HP Machines
+echo "Pulling DL380 G6"
 bash HP/DL380-G6-script.sh
+echo "Pulling DL320 G6"
 bash HP/DL320-G6-script.sh
 
 #Dell Machines
 
+echo "We're done!"
 exit
